@@ -1,4 +1,4 @@
-{% set version = '0.1.3' %}
+{% set version = "1.1.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ppclust_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ppclust/ppclust_{{ version }}.tar.gz
-  sha256: ab53220cec654537bb517613085c58954e4ca3bbb9b1a7c7af6e87ff25730091
+  sha256: 9bf672724d6f7a65f64b7ca268aa43bad066afe2cc7d1a1546c8c677bc94af6e
 
 build:
   merge_build_host: True  # [win]

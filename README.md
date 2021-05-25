@@ -5,11 +5,9 @@ Home: https://CRAN.R-project.org/package=ppclust
 
 Package license: GPL (>= 2)
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-ppclust-feedstock/blob/master/LICENSE.txt)
 
 Summary: Partitioning clustering divides the objects in a data set into non-overlapping subsets or clusters by using the prototype-based probabilistic and possibilistic clustering algorithms. This package covers a set of the functions for Fuzzy C-Means (Bezdek, 1974) <doi:10.1080/01969727308546047>, Possibilistic C-Means (Krishnapuram & Keller, 1993) <doi:10.1109/91.227387>, Possibilistic Fuzzy C-Means (Pal et al, 2005) <doi:10.1109/TFUZZ.2004.840099>, Possibilistic Clustering Algorithm (Yang et al, 2006) <doi:10.1016/j.patcog.2005.07.005>, Possibilistic C-Means with Repulsion (Wachs et al, 2006) <doi:10.1007/3-540-31662-0_6> and the other variants of hard and soft clustering algorithms. The cluster prototypes and membership matrices required by these partitioning algorithms are initialized with different initialization techniques that are available in the package 'inaparc'. As the distance metrics, not only the Euclidean distance but also a set of the commonly used distance metrics are available to use with some of the algorithms in the package. 
-
-
 
 Current build status
 ====================
@@ -38,6 +36,7 @@ Installing `r-ppclust` from the `conda-forge` channel can be achieved by adding 
 
 ```
 conda config --add channels conda-forge
+conda config --set channel_priority strict
 ```
 
 Once the `conda-forge` channel has been enabled, `r-ppclust` can be installed with:
@@ -108,9 +107,9 @@ build distinct package versions.
 
 In order to produce a uniquely identifiable distribution:
  * If the version of a package **is not** being increased, please add or increase
-   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string).
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string).
  * If the version of a package **is** being increased, please remember to return
-   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string)
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string)
    back to 0.
 
 Feedstock Maintainers

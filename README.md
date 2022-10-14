@@ -5,7 +5,7 @@ Home: https://CRAN.R-project.org/package=ppclust
 
 Package license: GPL (>= 2)
 
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-ppclust-feedstock/blob/master/LICENSE.txt)
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-ppclust-feedstock/blob/main/LICENSE.txt)
 
 Summary: Partitioning clustering divides the objects in a data set into non-overlapping subsets or clusters by using the prototype-based probabilistic and possibilistic clustering algorithms. This package covers a set of the functions for Fuzzy C-Means (Bezdek, 1974) <doi:10.1080/01969727308546047>, Possibilistic C-Means (Krishnapuram & Keller, 1993) <doi:10.1109/91.227387>, Possibilistic Fuzzy C-Means (Pal et al, 2005) <doi:10.1109/TFUZZ.2004.840099>, Possibilistic Clustering Algorithm (Yang et al, 2006) <doi:10.1016/j.patcog.2005.07.005>, Possibilistic C-Means with Repulsion (Wachs et al, 2006) <doi:10.1007/3-540-31662-0_6> and the other variants of hard and soft clustering algorithms. The cluster prototypes and membership matrices required by these partitioning algorithms are initialized with different initialization techniques that are available in the package 'inaparc'. As the distance metrics, not only the Euclidean distance but also a set of the commonly used distance metrics are available to use with some of the algorithms in the package. 
 
@@ -15,8 +15,8 @@ Current build status
 
 <table><tr><td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7425&branchName=master">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-ppclust-feedstock?branchName=master">
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7425&branchName=main">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-ppclust-feedstock?branchName=main">
       </a>
     </td>
   </tr>
@@ -39,23 +39,49 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `r-ppclust` can be installed with:
+Once the `conda-forge` channel has been enabled, `r-ppclust` can be installed with `conda`:
 
 ```
 conda install r-ppclust
 ```
 
-It is possible to list all of the versions of `r-ppclust` available on your platform with:
+or with `mamba`:
+
+```
+mamba install r-ppclust
+```
+
+It is possible to list all of the versions of `r-ppclust` available on your platform with `conda`:
 
 ```
 conda search r-ppclust --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search r-ppclust --channel conda-forge
+```
+
+Alternatively, `mamba repoquery` may provide more information:
+
+```
+# Search all versions available on your platform:
+mamba repoquery search r-ppclust --channel conda-forge
+
+# List packages depending on `r-ppclust`:
+mamba repoquery whoneeds r-ppclust --channel conda-forge
+
+# List dependencies of `r-ppclust`:
+mamba repoquery depends r-ppclust --channel conda-forge
 ```
 
 
 About conda-forge
 =================
 
-[![Powered by NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](http://numfocus.org)
+[![Powered by
+NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](https://numfocus.org)
 
 conda-forge is a community-led conda channel of installable packages.
 In order to provide high-quality builds, the process has been automated into the
@@ -65,10 +91,12 @@ for each of the installable packages. Such a repository is known as a *feedstock
 A feedstock is made up of a conda recipe (the instructions on what and how to build
 the package) and the necessary configurations for automatic building using freely
 available continuous integration services. Thanks to the awesome service provided by
-[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/)
-and [TravisCI](https://travis-ci.com/) it is possible to build and upload installable
-packages to the [conda-forge](https://anaconda.org/conda-forge)
-[Anaconda-Cloud](https://anaconda.org/) channel for Linux, Windows and OSX respectively.
+[Azure](https://azure.microsoft.com/en-us/services/devops/), [GitHub](https://github.com/),
+[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
+[Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
+it is possible to build and upload installable packages to the
+[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
 [conda-smithy](https://github.com/conda-forge/conda-smithy) has been developed.

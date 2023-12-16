@@ -1,4 +1,4 @@
-{% set version = "1.1.0" %}
+{% set version = "1.1.0.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ppclust_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ppclust/ppclust_{{ version }}.tar.gz
-  sha256: 9bf672724d6f7a65f64b7ca268aa43bad066afe2cc7d1a1546c8c677bc94af6e
+  sha256: f14d55f4ea0aee9469769d02ccabdda42973e501c234708c71e8b212115030d3
 
 build:
-  merge_build_host: True  # [win]
-  number: 3
+  merge_build_host: true  # [win]
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -40,18 +40,10 @@ test:
 about:
   home: https://CRAN.R-project.org/package=ppclust
   license: GPL (>= 2)
-  summary: 'Partitioning clustering divides the objects in a data set into non-overlapping subsets
-    or clusters by using the prototype-based probabilistic and possibilistic clustering
-    algorithms. This package covers a set of the functions for Fuzzy C-Means (Bezdek,
-    1974) <doi:10.1080/01969727308546047>, Possibilistic C-Means (Krishnapuram & Keller,
-    1993) <doi:10.1109/91.227387>, Possibilistic Fuzzy C-Means (Pal et al, 2005) <doi:10.1109/TFUZZ.2004.840099>,
-    Possibilistic Clustering Algorithm (Yang et al, 2006) <doi:10.1016/j.patcog.2005.07.005>,
-    Possibilistic C-Means with Repulsion (Wachs et al, 2006) <doi:10.1007/3-540-31662-0_6>
-    and the other variants of hard and soft clustering algorithms. The cluster prototypes
-    and membership matrices required by these partitioning algorithms are initialized
-    with different initialization techniques that are available in the package ''inaparc''.
-    As the distance metrics, not only the Euclidean distance but also a set of the commonly
-    used distance metrics are available to use with some of the algorithms in the package. '
+  summary: 'Partitioning clustering divides the objects in a data set into non-overlapping subsets or clusters by using the prototype-based probabilistic and possibilistic clustering algorithms. This package covers a set of the functions for Fuzzy C-Means (Bezdek, 1974) <doi:10.1080/01969727308546047>, Possibilistic C-Means
+    (Krishnapuram & Keller, 1993) <doi:10.1109/91.227387>, Possibilistic Fuzzy C-Means (Pal et al, 2005) <doi:10.1109/TFUZZ.2004.840099>, Possibilistic Clustering Algorithm (Yang et al, 2006) <doi:10.1016/j.patcog.2005.07.005>, Possibilistic C-Means with Repulsion (Wachs et al, 2006) <doi:10.1007/3-540-31662-0_6> and the
+    other variants of hard and soft clustering algorithms. The cluster prototypes and membership matrices required by these partitioning algorithms are initialized with different initialization techniques that are available in the package ''inaparc''. As the distance metrics, not only the Euclidean distance but also a set
+    of the commonly used distance metrics are available to use with some of the algorithms in the package. '
   license_family: GPL3
   license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
 
